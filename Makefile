@@ -8,5 +8,5 @@ build:
 .PHONY: build
 
 test-run:
-	docker run -it -v $(pwd):/opt --rm --privileged -v /lib/modules:/lib/modules:ro -v /usr/src:/usr/src:ro -v /usr/include/linux:/usr/include/linux:ro -v /sys/kernel/debug:/sys/kernel/debug:rw --pid=host $(TAG)
+	docker run -it -v $(pwd):/opt --rm --privileged -v /lib/modules:/lib/modules:ro -v /usr/src:/usr/src:ro -v /sys/kernel/debug:/sys/kernel/debug:rw --pid=host $(TAG)
 .PHONY: run
