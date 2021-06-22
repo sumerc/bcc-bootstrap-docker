@@ -21,19 +21,3 @@ RUN /opt/install-bcc-prerequisites-$OS.sh
 # Install BCC from source:
 # https://github.com/iovisor/bcc/issues/3220#issuecomment-759628013
 RUN /opt/install-bcc-$OS.sh
-
-# example, not tested:
-# docker run -it --rm \
-#   --privileged \
-#   -v /sys/kernel/debug:/sys/kernel/debug:rw \
-#   -v /lib/modules:/lib/modules:ro \
-#   -v /usr/src:/usr/src:ro \
-#   -v /etc/localtime:/etc/localtime:ro \
-#   --workdir /usr/share/bcc/tools \
-#   --pid=host \
-#   bcc
-
-# echo 1 >/proc/sys/kernel/perf_event_paranoid -> requires --privileged that is why we cannot do it in build phase
-
-# docker build . -f Dockerfile -t b1
-# docker run -v $(pwd):/opt -it --rm --privileged -v /sys/kernel/debug:/sys/kernel/debug:rw --pid=host b1
