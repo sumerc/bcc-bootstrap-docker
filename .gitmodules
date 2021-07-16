@@ -1,0 +1,3 @@
+[submodule "myprofiler"]
+	path = myprofiler
+	url = git@github.com:sumerc/myprofiler.git
